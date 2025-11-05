@@ -70,12 +70,6 @@
             line-height: 1.8;
         }
         
-        .pixel-art {
-            image-rendering: pixelated;
-            image-rendering: -moz-crisp-edges;
-            image-rendering: crisp-edges;
-        }
-        
         .character {
             display: inline-block;
             width: 40px;
@@ -203,59 +197,24 @@
                 <p>This is your central hub for privacy policies and app-ads.txt files for all your Android applications. No matter which app you're looking for, you'll find the necessary legal documents right here.</p>
                 
                 <div style="text-align: center; margin: 20px 0;">
-                    <a href="#privacy" class="btn">PRIVACY POLICY</a>
-                    <a href="#ads" class="btn">APP-ADS.TXT</a>
+                    <a href="/privacy-policy" class="btn">PRIVACY POLICY</a>
+                    <a href="/app-ads.txt" class="btn">APP-ADS.TXT</a>
                     <a href="#contact" class="btn">CONTACT</a>
                 </div>
             </section>
             
-            <section id="privacy" class="content-section">
-                <h2>PRIVACY POLICY</h2>
-                <p>This privacy policy applies to all Android applications developed and published by me unless otherwise specified in the app itself.</p>
+            <section class="content-section">
+                <h2>MY ANDROID APPLICATIONS</h2>
+                <p>Here are some of my published Android applications:</p>
                 
-                <h3>INFORMATION COLLECTION</h3>
-                <p>My applications may collect:</p>
                 <ul class="app-list">
-                    <li>Anonymous usage statistics to improve app performance</li>
-                    <li>Device information for compatibility purposes</li>
-                    <li>Advertising identifiers for personalized ads (where applicable)</li>
+                    <li><strong>Pixel Quest</strong> - Retro adventure game</li>
+                    <li><strong>8-Bit Calculator</strong> - Fun utility app</li>
+                    <li><strong>Arcade Memory</strong> - Memory matching game</li>
+                    <li><strong>Chiptune Player</strong> - Music player with retro sounds</li>
                 </ul>
                 
-                <h3>THIRD-PARTY SERVICES</h3>
-                <p>Some apps may include third-party services that have their own privacy policies:</p>
-                <ul class="app-list">
-                    <li>Google AdMob (advertising)</li>
-                    <li>Google Analytics (usage statistics)</li>
-                    <li>Firebase (app functionality)</li>
-                </ul>
-                
-                <h3>DATA USAGE</h3>
-                <p>Collected data is used solely for:</p>
-                <ul class="app-list">
-                    <li>Improving app functionality and user experience</li>
-                    <li>Showing relevant advertisements</li>
-                    <li>App analytics and performance monitoring</li>
-                </ul>
-                
-                <p>For app-specific privacy details, please check the in-app privacy policy or contact me directly.</p>
-            </section>
-            
-            <section id="ads" class="content-section">
-                <h2>APP-ADS.TXT</h2>
-                <p>This is the app-ads.txt file for all my Android applications. It helps authorize demand partners to sell ads in my apps.</p>
-                
-                <div style="background: #000; padding: 15px; margin: 15px 0; border: 2px solid var(--accent); font-family: monospace; white-space: pre-wrap;">
-# App-ads.txt for all Android apps by Pixel Privacy Portal
-# Contact: developer@example.com
-
-google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
-example.com, 12345, DIRECT
-adnetwork.com, abcdef, RESELLER
-                </div>
-                
-                <p>To implement this for a specific app, replace the placeholder values with your actual ad network IDs and add this file to your app's website root.</p>
-                
-                <a href="/app-ads.txt" class="btn" style="margin-top: 10px;">VIEW RAW APP-ADS.TXT</a>
+                <p>All my apps share the same privacy policy and advertising standards.</p>
             </section>
             
             <section id="contact" class="content-section">
@@ -265,10 +224,7 @@ adnetwork.com, abcdef, RESELLER
                 <ul class="app-list">
                     <li>Email: developer@example.com</li>
                     <li>Website: yourdeveloperwebsite.com</li>
-                    <li>Address: [Your contact address]</li>
                 </ul>
-                
-                <p>This privacy policy was last updated on: January 1, 2023</p>
             </section>
         </main>
         
@@ -289,16 +245,6 @@ adnetwork.com, abcdef, RESELLER
             button.addEventListener('mouseleave', function() {
                 this.style.transform = 'translate(0, 0)';
                 this.style.boxShadow = '4px 4px 0px var(--accent)';
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
             });
         });
     </script>
