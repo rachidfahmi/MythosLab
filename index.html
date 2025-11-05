@@ -6,60 +6,66 @@
   <title>MythosLab</title>
 
   <style>
+    :root {
+      --bg: #020205;
+      --text: #d5d5ff;
+      --sub: #8c8cff;
+      --accent: #9f5bff;
+    }
+
     body {
       margin: 0;
-      background: #05060a;
+      background: var(--bg);
       font-family: "Inter", sans-serif;
+      color: var(--text);
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      text-align: center;
       padding: 40px;
-      color: #d4d4ff;
+      position: relative;
+      overflow: hidden;
     }
 
-    .scan-lines:before {
-      content:"";
-      position:absolute;
-      left:0;top:0;right:0;bottom:0;
+    /* Soft neon grid background */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
       background: repeating-linear-gradient(
         to bottom,
-        rgba(255,255,255,0.04) 0px,
-        rgba(255,255,255,0.04) 1px,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
         transparent 2px,
         transparent 4px
       );
-      pointer-events:none;
-    }
-
-    .container {
-      text-align: center;
-      max-width: 650px;
-      position: relative;
+      pointer-events: none;
     }
 
     h1 {
       font-size: 3rem;
       font-weight: 800;
-      background: linear-gradient(90deg,#00ffe7,#7b2ff7,#ff2995);
-      -webkit-background-clip:text;
-      color: transparent;
       margin-bottom: 14px;
-      letter-spacing: 1px;
+      background: linear-gradient(90deg,#6a00ff,#b95ce4,#ff3da9);
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: 1.8px;
     }
 
     p {
-      font-size: 1.15rem;
-      color: #aab0ff;
-      margin-bottom: 34px;
-      line-height: 1.7;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--sub);
+      max-width: 650px;
+      margin: 0 auto 34px;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 24px;
-      background: #7b2ff7;
-      border-radius: 10px;
+      padding: 13px 26px;
+      background: var(--accent);
+      border-radius: 8px;
       color: white;
       text-decoration: none;
       font-weight: 600;
@@ -67,4 +73,57 @@
     }
 
     .btn:hover {
-      box-shadow
+      box-shadow: 0 0 16px var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .footer {
+      margin-top: 50px;
+      color: #6b6b96;
+      font-size: 0.85rem;
+    }
+
+    a.link {
+      color: #bfa7ff;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    a.link:hover {
+      color: #d6c4ff;
+    }
+
+    /* tiny flicker animation */
+    h1 {
+      animation: flicker 2.8s infinite alternate;
+    }
+    @keyframes flicker {
+      0% {opacity: 1;}
+      50% {opacity: .96;}
+      100% {opacity: 1;}
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>MythosLab</h1>
+    <p>
+      A research archive and decoding network for dreams, subconscious symbolism,
+      and the hidden architecture of the mind.<br><br>
+      No illusions. No mysticism. Just signal behind the static.
+    </p>
+
+    <a href="#" class="btn">Enter the Lab</a>
+
+    <div class="footer">
+      <a class="link" href="/privacy.html">Privacy Policy</a> • 
+      <span id="year"></span> MythosLab
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
